@@ -15,5 +15,7 @@ Then I tried simple neural network (Sequential) with some Conv2D/Activation/MaxP
 This model performs quite well with the val accuracy at 0.97-0.98 when it stopped training at 9th epoch.
 I saved pretrained model for the further usage. This model also perform well with test data.
 Here are some metrics:
+
+
 ![RevisorVision_model predictions](https://user-images.githubusercontent.com/96116349/188226528-ead655cc-3bb8-4b7e-ae1b-ecc627495352.jpg)
 
