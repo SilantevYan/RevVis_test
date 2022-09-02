@@ -58,6 +58,7 @@ test_data = valid_gen.flow_from_directory(directory='C:/Users/feuri/PycharmProje
 CLASSES = train_data.class_indices
 print(CLASSES)
 
+'''Here we open and look through sample images from first batch'''
 # features, target = next(train_data)
 #
 # fig = plt.figure(figsize=(10, 10))
@@ -69,7 +70,7 @@ print(CLASSES)
 #     plt.tight_layout()
 # plt.show()
 #
-# '''Now let's add layers to our classification model'''
+'''Now let's add layers to our classification model'''
 #
 # model = Sequential()
 # model.add(Conv2D(32, (3, 3), input_shape=(256, 256, 3)))
@@ -89,7 +90,7 @@ print(CLASSES)
 # # here we use sigmoid function because we have only two choices and they have to be separate
 # model.add(Activation('sigmoid'))
 #
-# '''Compiling the model with binary crossentrophy for the same reason'''
+'''Compiling the model with binary crossentrophy for the same reason'''
 #
 # cb = [EarlyStopping(patience=5, monitor='val_accuracy', mode='max', restore_best_weights=True),
 #       ModelCheckpoint("RevisorVision.h5", save_best_only=True)]
