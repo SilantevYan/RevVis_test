@@ -59,6 +59,7 @@ CLASSES = train_data.class_indices
 print(CLASSES)
 
 '''Here we open and look through sample images from first batch'''
+
 # features, target = next(train_data)
 #
 # fig = plt.figure(figsize=(10, 10))
@@ -69,9 +70,9 @@ print(CLASSES)
 #     plt.yticks([])
 #     plt.tight_layout()
 # plt.show()
-#
+
 '''Now let's add layers to our classification model'''
-#
+
 # model = Sequential()
 # model.add(Conv2D(32, (3, 3), input_shape=(256, 256, 3)))
 # model.add(Activation('relu'))
@@ -86,19 +87,18 @@ print(CLASSES)
 # model.add(Dense(64))
 # model.add(Activation('relu'))
 # model.add(Dropout(0.5))
-# model.add(Dense(1))
-# # here we use sigmoid function because we have only two choices and they have to be separate
+# model.add(Dense(1)) # here we use sigmoid function because we have only two choices and they have to be separate
 # model.add(Activation('sigmoid'))
-#
+
 '''Compiling the model with binary crossentrophy for the same reason'''
-#
+
 # cb = [EarlyStopping(patience=5, monitor='val_accuracy', mode='max', restore_best_weights=True),
 #       ModelCheckpoint("RevisorVision.h5", save_best_only=True)]
-#
+
 # model.compile(loss='binary_crossentropy',
 #               optimizer=keras.optimizers.Adam(1e-5),
 #               metrics=['accuracy'])
-#
+
 # with tf.device('/gpu:0'):
 #     model.fit(
 #         train_data,
@@ -111,11 +111,10 @@ y_prob = model.predict(test_data)
 results = []
 y_class =[]
 for i in range(len(y_prob)):
-    #y_class.append(y_prob[i].argmax(axis=-1))
     if y_prob[i] < .5:
-        results.append('Absent') #100 - (100 * y_prob[i]))
+        results.append('Absent') 
     elif y_prob[i] > .5:
-        results.append('At work') #y_prob[i] * 100)
+        results.append('At work') 
     else:
         results = results.append('Not Sure')
 print(results)
